@@ -14,7 +14,7 @@ export default function RootNavigation() {
     <NavigationNativeContainer>
       <Stack.Navigator initialRouteName="formLogin">
         <Stack.Screen
-          name="formLogin"
+          name="Login"
           component={FormLogin}
           options={{ headerShown: false }}
         />
