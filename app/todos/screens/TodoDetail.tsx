@@ -6,16 +6,8 @@ const TodoDetail: React.FC<any> = props => {
   const { obj } = props.route.params;
   return (
     <View style={styles.container}>
-      <Text
-        style={{
-          fontSize: 30,
-        }}>
-        {`Title: ${obj.title}`}
-      </Text>
-      <Text
-        style={{
-          fontSize: 20,
-        }}>
+      <Text style={styles.titleText}>{`Title: ${obj.title}`}</Text>
+      <Text style={styles.descriptionText}>
         {`Description: ${obj.description}`}
       </Text>
     </View>
@@ -28,5 +20,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     margin: 20,
+  },
+  titleText: {
+    fontSize: 30,
+  },
+  descriptionText: {
+    fontSize: 20,
   },
 });
