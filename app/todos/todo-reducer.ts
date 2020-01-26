@@ -5,11 +5,13 @@ const initialState: ITodoState = {
     {
       id: '',
       title: '',
+      description: '',
     },
   ],
   todo: {
     id: '',
     title: '',
+    description: '',
   },
   isLoading: false,
   error: '',

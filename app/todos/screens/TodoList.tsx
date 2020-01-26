@@ -34,7 +34,10 @@ const TodoList: React.FC<Props> = props => {
   );
 
   /* React Hooks */
-  const [todo, setTodo] = useState<ITodoModel>({ title: '' } as ITodoModel); // The new todo that will be sent to the web API
+  const [todo, setTodo] = useState<ITodoModel>({
+    title: '',
+    description: '',
+  } as ITodoModel); // The new todo that will be sent to the web API
   const [forEditing, setForEditing] = useState<string>('0'); // For tracking which todo should be edited
   const [todoToUpdate, setTodoToUpdate] = useState<ITodoModel>(
     {} as ITodoModel,
@@ -44,17 +47,24 @@ const TodoList: React.FC<Props> = props => {
     dispatch(fetchTodos());
   }, [dispatch]);
 
-  const handleInputOnChange = (input: string) => {
+  const handleTitleOnChange = (title: string) => {
     // To edit input
     const newTodo = { ...todo };
-    newTodo.title = input;
+    newTodo.title = title;
     setTodo(newTodo);
   };
 
-  const handleEditOnChange = (input: string) => {
+  const handleDescriptionOnChange = (description: string) => {
+    // To edit input
+    const newTodo = { ...todo };
+    newTodo.description = description;
+    setTodo(newTodo);
+  };
+
+  const handleEditOnChange = (title: string) => {
     // To edit input
     const updatedTodo: ITodoModel = { ...todoToUpdate };
-    updatedTodo.title = input;
+    updatedTodo.title = title;
     setTodoToUpdate(updatedTodo);
   };
 
@@ -66,7 +76,7 @@ const TodoList: React.FC<Props> = props => {
 
   const handleSaveOnPress = () => {
     dispatch(addTodo(todo));
-    setTodo({ title: '' } as ITodoModel);
+    setTodo({ title: '', description: '' } as ITodoModel);
   };
 
   const handleUpdateOnPress = () => {
@@ -77,9 +87,14 @@ const TodoList: React.FC<Props> = props => {
     <View style={styles.container}>
       <View style={{ marginBottom: 20 }}>
         <TextInput
-          onChangeText={handleInputOnChange}
+          onChangeText={handleTitleOnChange}
           value={todo.title}
-          label="what's new?"
+          label="Title"
+        />
+        <TextInput
+          onChangeText={handleDescriptionOnChange}
+          value={todo.description}
+          label="Description"
         />
         <Button mode="contained" onPress={() => handleSaveOnPress()}>
           Save
@@ -168,4 +183,5 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
 });
+
 export default TodoList;
