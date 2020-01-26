@@ -1,0 +1,54 @@
+{
+  "todos": [
+    {
+      "title": "Cook",
+      "description": "Cook steak",
+      "id": "GLGN0VP",
+      "finished": true
+    },
+    {
+      "title": "Pimp my Tesla",
+      "description": "Customize Tesla",
+      "id": "xBwkYid",
+      "finished": true
+    },
+    {
+      "title": "Coffee",
+      "description": "Latte",
+      "id": "-WG7nJg",
+      "finished": true
+    },
+    {
+      "title": "Coffee break",
+      "description": "Espresso",
+      "id": "At_SvVt",
+      "finished": false
+    }
+  ],
+  "foods": [
+    {
+      "name": "Cook Thai",
+      "description": "This is how you make Thai food!",
+      "id": "GLGN0VP",
+      "finished": true
+    },
+    {
+      "name": "Cook Indian",
+      "description": "This is how you make Indian food!",
+      "id": "xBwkYid",
+      "finished": true
+    },
+    {
+      "name": "Cook Vietnamese",
+      "description": "This is how you make Vietnamese food!",
+      "id": "-WG7nJg",
+      "finished": true
+    },
+    {
+      "name": "Cook Norwegian",
+      "description": "This is how you make Norwegian food!",
+      "id": "At_SvVt",
+      "finished": false
+    }
+  ]
+}
