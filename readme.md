@@ -1,4 +1,4 @@
-### If you get this issue:
+### If you get into this issue:
 - `[Xcode 11] 'Multiple commands produce' error when building with new Xcode build system`
 
 #### Solution
